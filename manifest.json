@@ -1,0 +1,24 @@
+{
+  "name": "Prompt Lab — AI Prompt Generator",
+  "short_name": "Prompt Lab",
+  "description": "Say what you need. Get a prompt that actually delivers it. Built by Khaya Dlamini.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F2F4F3",
+  "theme_color": "#2F6F5E",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
