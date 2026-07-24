@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prompt Lab — AI Prompt Generator</title>
+<title>Prompt Lab</title>
 <script src="https://js.puter.com/v2/"></script>
 <meta name="description" content="Prompt Lab turns what you need into a clear, ready-to-use AI prompt. Built by Khaya Dlamini, a BICT (IoT) student, to help lazy people get better AI results.">
 <meta property="og:title" content="Prompt Lab : AI Prompt Generator">
@@ -663,7 +663,7 @@
         <div class="error-box" id="genError" aria-live="assertive"></div>
 
         <div class="signin-box" id="signinBox" aria-live="polite">
-          <p>Generating a prompt runs on Puter's free AI service. Sign in with a free Puter account (takes a few seconds) to enable it — your prompt will generate automatically right after.</p>
+          <p>Generating a prompt runs on Puter's free AI service. Sign in with a free Puter account (takes a few seconds) to enable it, your prompt will generate automatically right after.</p>
           <button type="button" class="btn btn-primary" id="signinBtn">Sign in to enable AI</button>
         </div>
 
@@ -783,7 +783,7 @@
         <p class="footer-bio">I created Prompt Lab out of pure laziness because life is too short to argue with an AI over a bad prompt. If it saves you from losing your mind, it’s a win.</p>
       </div>
     </div>
-    <p>Generated prompts are written by Claude via Anthropic's API : what you type in "Generate a prompt" is sent to Claude to write your prompt. Nothing you type in "Check my own prompt" leaves your browser.</p>
+    <p>Generated prompts are written by Puter.js via Anthropic's API : what you type in "Generate a prompt" is sent to Claude to write your prompt. Nothing you type in "Check my own prompt" leaves your browser.</p>
   </div>
 </footer>
 </div>
@@ -793,19 +793,19 @@
   /* ---------------- SIGN-UP GATE ---------------- */
   const MOTIVATIONS = [
     (name) => [
-      `Honestly? I built this because I'm lazy, ${name}. I don't want to write three paragraphs explaining myself to an AI every time I need something — but I've learned the hard way that "make it good" gets you nothing, and thirty seconds of actually explaining what you need gets you everything.`,
+      `Honestly? I built this because I'm lazy, ${name}. I don't want to write three paragraphs explaining myself to an AI every time I need something but I've learned the hard way that "make it good" gets you nothing, and thirty seconds of actually explaining what you need gets you everything.`,
       `So do yourself a favour: be lazy about the work, not the ask. Tell it who it's for, what it's for, and what "done" looks like. That's the whole trick. Everything else is just this website doing the typing for you.`
     ],
     (name) => [
       `${name}, here's the thing nobody tells you about AI: it's not reading your mind, it's reading your message. If your message is lazy, the answer is lazy right back at you.`,
-      `I'm not saying become a different person. I'm saying spend the same amount of effort you'd spend texting a friend for a favour — a sentence of context goes further than you'd think.`
+      `I'm not saying become a different person. I'm saying spend the same amount of effort you'd spend texting a friend for a favour, a sentence of context goes further than you'd think.`
     ],
     (name) => [
       `A confession, ${name}: I used to type one-word demands into AI and get annoyed when the answer was generic. Turns out that's on me, not the model.`,
-      `Good prompts aren't longer for the sake of being longer — they just actually say what you want. Try it once properly and you'll never go back to the lazy version. Well — the other lazy version.`
+      `Good prompts aren't longer for the sake of being longer,they just actually say what you want. Try it once properly and you'll never go back to the lazy version. Well the other lazy version.`
     ],
     (name) => [
-      `${name}, if you take one thing from this: vague in, vague out. The AI can't guess your deadline, your audience, or what "good" means to you — so tell it.`,
+      `${name}, if you take one thing from this: vague in, vague out. The AI can't guess your deadline, your audience, or what "good" means to you, so tell it.`,
       `This whole site exists so you don't have to remember that every time. Type what you need, let it write the actual prompt, go be productively lazy elsewhere.`
     ]
   ];
@@ -1020,16 +1020,16 @@
   function renderNotesInto(el, hits){
     el.innerHTML = '';
     const notes = [];
-    if (hits.roleHits.length) notes.push({ok:true, text:'A role or persona is set for the AI — it knows who to "be" while answering.'});
-    if (hits.actionHits.length) notes.push({ok:true, text:'Clear action verb — the AI knows what to do, not just what topic to touch.'});
-    if (hits.contextHits.length) notes.push({ok:true, text:'Situation given — the AI knows who this is for and why.'});
-    if (hits.constraintHits.length || hits.numberConstraint) notes.push({ok:true, text:'Constraints given — limits like length, deadline, or scope are spelled out.'});
-    if (hits.outputHits.length) notes.push({ok:true, text:'Output shape specified — you told it how the answer should look.'});
-    if (hits.vagueHits.length) notes.push({ok:false, text:'Vague filler words found — swap these for something concrete.'});
-    if (!hits.roleHits.length) notes.push({ok:false, text:'No role set — try "act as..." or "you are a..." to anchor the AI\'s perspective.'});
-    if (!hits.contextHits.length) notes.push({ok:false, text:'No context — the AI doesn\'t know your situation.'});
-    if (!(hits.constraintHits.length || hits.numberConstraint)) notes.push({ok:false, text:'No constraints — length, scope, or deadline are left open.'});
-    if (!hits.outputHits.length) notes.push({ok:false, text:'No output format requested — the AI is guessing how the answer should be shaped.'});
+    if (hits.roleHits.length) notes.push({ok:true, text:'A role or persona is set for the AI : it knows who to "be" while answering.'});
+    if (hits.actionHits.length) notes.push({ok:true, text:'Clear action verb : the AI knows what to do, not just what topic to touch.'});
+    if (hits.contextHits.length) notes.push({ok:true, text:'Situation given : the AI knows who this is for and why.'});
+    if (hits.constraintHits.length || hits.numberConstraint) notes.push({ok:true, text:'Constraints given : limits like length, deadline, or scope are spelled out.'});
+    if (hits.outputHits.length) notes.push({ok:true, text:'Output shape specified : you told it how the answer should look.'});
+    if (hits.vagueHits.length) notes.push({ok:false, text:'Vague filler words found : swap these for something concrete.'});
+    if (!hits.roleHits.length) notes.push({ok:false, text:'No role set : try "act as..." or "you are a..." to anchor the AI\'s perspective.'});
+    if (!hits.contextHits.length) notes.push({ok:false, text:'No context : the AI doesn\'t know your situation.'});
+    if (!(hits.constraintHits.length || hits.numberConstraint)) notes.push({ok:false, text:'No constraints : length, scope, or deadline are left open.'});
+    if (!hits.outputHits.length) notes.push({ok:false, text:'No output format requested : the AI is guessing how the answer should be shaped.'});
     notes.forEach(n => {
       const li = document.createElement('li');
       li.innerHTML = `<span class="dot ${n.ok?'good':'missing'}"></span><span>${n.text}</span>`;
@@ -1092,7 +1092,7 @@
       need: 'Give me feedback on the argument and structure of my essay before I submit it.',
       persona: 'Academic Writer',
       format: 'Bullet points',
-      constraints: "Don't rewrite it for me — point out what to fix."
+      constraints: "Don't rewrite it for me but point out what to fix."
     },
     email: {
       need: 'Write a professional follow-up email chasing a reply I never got.',
@@ -1142,11 +1142,11 @@
     return parts.join('\n');
   }
 
-  const SYSTEM_INSTRUCTION = 'You are a prompt-writing assistant. The user will describe a task they need help with, plus an optional target persona, context, format, tone, and constraints. Write ONE polished, ready-to-use prompt they can copy and paste directly into an AI assistant to get that outcome — structure it internally around role, task, context, output format, and constraints where relevant, and vary your phrasing and structure based on what they need rather than following one fixed template. Do not solve the task yourself. Do not add a preamble, explanation, quotation marks, or markdown formatting — output ONLY the prompt text itself, written in first person as something the user would send.';
+  const SYSTEM_INSTRUCTION = 'You are a prompt-writing assistant. The user will describe a task they need help with, plus an optional target persona, context, format, tone, and constraints. Write ONE polished, ready-to-use prompt they can copy and paste directly into an AI assistant to get that outcome and structure it internally around role, task, context, output format, and constraints where relevant, and vary your phrasing and structure based on what they need rather than following one fixed template. Do not solve the task yourself. Do not add a preamble, explanation, quotation marks, or markdown formatting, output ONLY the prompt text itself, written in first person as something the user would send.';
 
   async function callPuter(need, details){
     if (!(window.puter && window.puter.ai && typeof window.puter.ai.chat === 'function')){
-      throw new Error('Puter.js failed to load — check your connection and disable any ad blocker for js.puter.com.');
+      throw new Error('Puter.js failed to load : check your connection and disable any ad blocker for js.puter.com.');
     }
     const userMessage = buildUserMessage(need, details);
     const response = await withTimeout(
@@ -1317,7 +1317,7 @@
   const TASKS = [
     "Your economics test is tomorrow and you don't understand opportunity cost. You want AI to help you actually get it, not just define it.",
     "You're behind on a group project with three teammates and need a realistic week-by-week plan before Friday's check-in.",
-    "You have a two-page reflection essay due and want feedback on your argument before you submit — not a rewrite.",
+    "You have a two-page reflection essay due and want feedback on your argument before you submit, not a rewrite.",
     "You're applying for a vacation internship and want your CV reviewed for a specific industry, not generic advice.",
     "You need to explain a stats concept from today's lecture to a study group of five people who missed the lecture."
   ];
@@ -1367,12 +1367,12 @@
 
   function renderTips(metrics, hits, wordCount){
     const tips = [];
-    if (metrics.role < 15) tips.push('Give the AI a role — try starting with "Act as..." or "You are a...".');
-    if (metrics.context < 15) tips.push('Add who this is for and the situation — e.g. "for a first-year student, exam is tomorrow."');
-    if (metrics.constraints < 12) tips.push('Add a constraint — a length limit, deadline, or scope boundary.');
-    if (metrics.output < 12) tips.push('Tell it the shape of the answer you want — bullet points, a table, code, an email, etc.');
+    if (metrics.role < 15) tips.push('Give the AI a role : try starting with "Act as..." or "You are a...".');
+    if (metrics.context < 15) tips.push('Add who this is for and the situation e.g. "for a first-year student, exam is tomorrow."');
+    if (metrics.constraints < 12) tips.push('Add a constraint, a length limit, deadline, or scope boundary.');
+    if (metrics.output < 12) tips.push('Tell it the shape of the answer you want, bullet points, a table, code, an email, etc.');
     if (hits.vagueHits.length) tips.push('Replace vague words like "' + hits.vagueHits[0] + '" with something specific.');
-    if (wordCount < 12) tips.push('Give it more to work with — one short sentence rarely carries enough detail.');
+    if (wordCount < 12) tips.push('Give it more to work with, one short sentence rarely carries enough detail.');
     if (tips.length === 0) tips.push('This is a strong prompt. Try tightening it further, or add an example of the kind of output you like.');
     tipsList.innerHTML = '';
     tips.forEach(t => { const li = document.createElement('li'); li.textContent = t; tipsList.appendChild(li); });
